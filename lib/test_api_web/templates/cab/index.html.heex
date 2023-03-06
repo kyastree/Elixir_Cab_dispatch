@@ -1,0 +1,30 @@
+<h1>Listing Cabs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cabid</th>
+      <th>Description</th>
+      <th>Name</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for cab <- @cabs do %>
+    <tr>
+      <td><%= cab.cabid %></td>
+      <td><%= cab.description %></td>
+      <td><%= cab.name %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.cab_path(@conn, :show, cab) %></span>
+        <span><%= link "Edit", to: Routes.cab_path(@conn, :edit, cab) %></span>
+        <span><%= link "Delete", to: Routes.cab_path(@conn, :delete, cab), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Cab", to: Routes.cab_path(@conn, :new) %></span>

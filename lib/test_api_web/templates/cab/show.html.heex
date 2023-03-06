@@ -1,0 +1,23 @@
+<h1>Show Cab</h1>
+
+<ul>
+
+  <li>
+    <strong>Cabid:</strong>
+    <%= @cab.cabid %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @cab.description %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @cab.name %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.cab_path(@conn, :edit, @cab) %></span> |
+<span><%= link "Back", to: Routes.cab_path(@conn, :index) %></span>
